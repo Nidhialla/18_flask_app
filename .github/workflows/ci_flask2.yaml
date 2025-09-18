@@ -5,16 +5,16 @@ on:
         branches:
             - main
 
-jobs:
+jobs: 
     python_app:
         runs-on: ubuntu-latest
-        
+
         steps:
-            - uses: actions/checkout@v5
-            
-            - name: setting up python in your app
-              uses: actions/setup-python@v6
-              with: 
+            - uses: actions/checkout@v4
+
+            - name: Setting up Python in your runner
+              uses: actions/setup-python@v5
+              with:
                 python-version: '3.13'
 
             - name: Installing dependencies
@@ -23,14 +23,12 @@ jobs:
                 pip install -r requirements.txt
 
             - name: Running the Flask Application
-              run: | 
+              run: |
                 python app.py &
-                sleep 10    
+                sleep 10
 
-            - name: setting up test cases
-              run: | 
-                echo "Testing has been Started."
+            - name: Setting up test cases
+              run: |
+                echo "Testing has been started."
                 curl http://127.0.0.1:5000
-                echo "Testing has been completed"
-              
-
+                echo "Testing has been completed."
