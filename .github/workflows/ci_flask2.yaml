@@ -31,6 +31,6 @@ jobs:
               run: | 
                 echo "Testing has been Started."
                 curl http://127.0.0.1:5000
-                echo "Testing has been completed."
+                echo "Testing has been completed"
               
 
